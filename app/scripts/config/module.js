@@ -1,4 +1,4 @@
 (function(){
   angular.module('exampleApp.config', [])
-    .costant('apiUr', 'http://jsonplaceholder.typicode.com');
+    .constant('apiUrl', 'http://jsonplaceholder.typicode.com');
 })();
