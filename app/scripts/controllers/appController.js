@@ -4,6 +4,10 @@
 
   function AppController($scope, appTitle) {
     $scope.title = appTitle;
+
+    $scope.sendEvent = function () {
+      $scope.$broadcast('userclicked', {number: 123});
+    }
   }
 
 })();

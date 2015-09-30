@@ -17,13 +17,20 @@
 </head>
 <body ng-controller="appController">
 
+
 <div class="container">
   <h1 class="page_header" ng-bind="title"></h1>
+
+  <input ng-model="title">
+
+  <button ng-click="sendEvent()" class="btn btn-primary btn-block">Click me</button>
+
   <div class="row" ng-controller="exampleController">
-    <p>First</p>
+    <p>{{message}}</p>
   </div>
+
   <div class="row" ng-controller="exampleController">
-    <p>Second</p>
+    <p>{{message}}</p>
   </div>
 </div>
 
