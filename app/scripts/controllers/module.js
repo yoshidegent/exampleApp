@@ -1,12 +1,32 @@
 'use strict';
 
 (function () {
+  angular.module('exampleApp.controllers', ['exampleApp.config', 'ngRoute'])
+    .config(function(apiUrl, $routeProvider) {
+      console.log('url: ' + apiUrl);
 
-  angular.module('exampleApp.controllers', ['exampleApp.config'])
-    .config(function (apiUrl) {
-      console.log('controllers module config');
-      console.log('apiUrl: ' + apiUrl);
-    }).run(function () {
-      console.log('controllers module run');
+      $routeProvider.when('/', {
+        templateUrl: 'views/home.html'
+      });
+      $routeProvider.when('/about', {
+        templateUrl: 'views/about.html',
+        controller: 'exampleController'
+      });
+      $routeProvider.when('/data', {
+        templateUrl: 'views/data.html',
+        controller: 'dataController'
+      });
+
+
+      $routeProvider.otherwise({
+        redirectTo: 'views/home.html'
+      });
+
+
+    })
+    .run(function() {
+      console.log("controllers module run");
     });
+
 })();
+
