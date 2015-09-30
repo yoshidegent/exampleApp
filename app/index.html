@@ -8,20 +8,30 @@
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <!-- build:css(.) styles/vendor.css -->
   <!-- bower:css -->
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild -->
+
+
+  <style>
+    input[type="text"].ng-dirty.ng-invalid
+    {
+      background-color: red;
+    }
+  </style>
 </head>
 <body ng-controller="appController">
 
 
-<div class="container">
+<div class="container" ng-controller="exampleController">
   <h1 class="page_header" ng-bind="title"></h1>
 
   <input ng-model="title">
+
+  <ng-include src="includeHtml.html"></ng-include>
 
   <button ng-click="sendEvent()" class="btn btn-primary btn-block">Click me</button>
 
@@ -32,6 +42,32 @@
   <div class="row" ng-controller="exampleController">
     <p>{{message}}</p>
   </div>
+
+  <div>
+    <input type="checkbox" ng-model="showTable">
+    <table class="table" ng-show="showTable">
+      <thead>
+      <tr><th></th></tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="item in data">
+        <td>{{$index + 1}}</td>
+        <td>{{item.prop}}</td>
+        <td>{{$even}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div>
+    <form name="myForm" novalidate class="form" ng-submit="submitForm(inputText)">
+      <input type="text" name="inputText" class="form-control" ng-model="inputText" required />
+      <button ng-disabled="myForm.$invalid" type="submit" class="btn btn-primqry btn-block">Send form</button>
+    </form>
+
+  </div>
+
+
 </div>
 
 <!-- build:js(.) scripts/vendor.js -->
