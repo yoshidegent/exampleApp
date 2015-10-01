@@ -1,7 +1,7 @@
 (function () {
   angular.module('exampleApp.controllers').controller('exampleController', ExampleController);
 
-  function ExampleController($scope) {
+  function ExampleController($scope, backendService) {
     console.log('create ExampleController');
 
     $scope.data = [
@@ -17,5 +17,11 @@
     {
       console.log("submit " + inputText);
     };
+
+    $scope.getData = function() {
+      backendService.getAlbums().then(function(data){
+         $scope.albums = data;
+      });
+    }
   }
 })();

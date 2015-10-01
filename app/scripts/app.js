@@ -5,4 +5,4 @@
     }).run(function () {
       console.log('app run');
     });
-})();
+}());
