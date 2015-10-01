@@ -4,7 +4,7 @@
 
       return {
         templateUrl: 'views/customDirective.html',
-        restrict: 'E'
+        restrict: 'EA' // E: can be used as element, A: can be used as template
       }
     });
 
