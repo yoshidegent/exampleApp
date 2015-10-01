@@ -1,9 +1,11 @@
 'use strict';
 
 (function () {
-  angular.module('exampleApp.controllers', ['exampleApp.config', 'ngRoute', 'exampleApp.services'])
-    .config(function(apiUrl, $routeProvider) {
+  angular.module('exampleApp.controllers', ['exampleApp.config', 'ngRoute', 'exampleApp.services', 'exampleApp.directives'])
+    .config(function(apiUrl, $routeProvider, backendServiceProvider) {
       console.log('url: ' + apiUrl);
+
+      backendServiceProvider.setApiUrl(apiUrl);
 
       $routeProvider.when('/', {
         templateUrl: 'views/home.html'

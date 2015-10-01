@@ -1,19 +1,50 @@
 (function () {
   angular.module('exampleApp.services')
-    .factory('backendService', function ($http, apiUrl, $q) {
+    .provider('backendService', function () {
+      //provider
+      var url;
       return {
-        getAlbums: function() {
+        
+        setApiUrl : function(apiUrl) {
+          url = apiUrl;
+        },
 
-          var defer = $q.defer();
+        $get: function ($http, $q) {
+          //Service
+          return {
+            getAlbums: function () {
 
-          $http.get(apiUrl + '/albums').then(function(response){
-            var albums = response.data;
+              var defer = $q.defer();
 
-            defer.resolve(albums);
-          });
+              $http.get(url + '/albums').then(function (response) {
+                var albums = response.data;
 
-          return defer.promise;
+                defer.resolve(albums);
+              });
+
+              return defer.promise;
+            }
+
+          }
         }
       }
     });
+  /*
+   .factory('backendService', function ($http, apiUrl, $q) {
+   return {
+   getAlbums: function() {
+
+   var defer = $q.defer();
+
+   $http.get(apiUrl + '/albums').then(function(response){
+   var albums = response.data;
+
+   defer.resolve(albums);
+   });
+
+   return defer.promise;
+   }
+   }
+   });
+   */
 })();

@@ -10,6 +10,8 @@
     <file url="file://$PROJECT_DIR$/app/scripts/controllers/dataController.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/scripts/controllers/exampleController.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/scripts/controllers/module.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/scripts/directives/module.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/scripts/directives/simpleDirective.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/scripts/services/backendService.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/scripts/services/module.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/about.html" charset="UTF-8" />
