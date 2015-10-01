@@ -12,6 +12,8 @@
       $scope.$broadcast('userclicked', {number: 123});
     }
 
+    $scope.value = 'something';
+
     $scope.goto = function() {
       $location.path('/data');
     }
