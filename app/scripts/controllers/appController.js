@@ -3,7 +3,7 @@
     .controller('appController', AppController);
 
   function AppController($scope, appTitle, $location) {
-    this.title = appTitle;
+    $scope.title = appTitle;
 
     $scope.showTable = true;
     $scope.data = [{prop: 'a'}, {prop: 'b'}, {prop: 'c'}];
@@ -12,7 +12,7 @@
       $scope.$broadcast('userclicked', {number: 123});
     }
 
-    this.goto = function() {
+    $scope.goto = function() {
       $location.path('/data');
     }
   }
