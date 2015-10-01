@@ -3,8 +3,9 @@
     .directive('customDirective', function () {
 
       return {
-        templateUrl: 'views/customDirective.html'
+        templateUrl: 'views/customDirective.html',
+        restrict: 'E'
       }
-    })
+    });
 
 })();
